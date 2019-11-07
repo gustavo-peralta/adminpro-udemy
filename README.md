@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## GIT - Commnads more used
 git commit -am "Modificaciones en los modulos" -> Two step in one, adding files to commit and commit
+git push origin master
 
 ## Development server
 
