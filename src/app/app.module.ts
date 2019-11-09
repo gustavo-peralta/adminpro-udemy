@@ -11,6 +11,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 
+// Temporalmente
+import { FormsModule } from '@angular/forms';
+import { ComponentModule } from './componets/components.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,8 +24,10 @@ import { RegisterComponent } from './login/register.component';
   imports: [
     BrowserModule,
     PagesModule,
-    APP_ROUTES
+    APP_ROUTES,
+    FormsModule
   ],
+  exports: [ ],
   providers: [],
   bootstrap: [AppComponent]
 })

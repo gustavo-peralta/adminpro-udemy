@@ -15,6 +15,11 @@ git commit -am "Modificaciones en los modulos" -> Two step in one, adding files 
 git push origin master
 
 
+## Cosas interesantes descubiertas en el curso
+[att.style.width] -> Angular puede gestionar propiedades conocidas de un elemento HTML indicandole el atributo attr y generando ese valor desde el componente.
+
+ng g c component/graficoDonut --is --spec=false --skip-import -> skip-import evita que se añada este componente al app.module.ts
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

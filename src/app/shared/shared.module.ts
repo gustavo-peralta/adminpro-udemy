@@ -5,10 +5,12 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { PagesModule } from '../pages/pages.module';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { ComponentModule } from '../componets/components.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    ComponentModule
   ],
   declarations: [
     HeaderComponent,
@@ -20,7 +22,8 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
     HeaderComponent,
     SidebarComponent,
     BreadcrumbsComponent,
-    NopagefoundComponent
+    NopagefoundComponent,
+    ComponentModule
   ]
 })
 export class SharedModule { }
