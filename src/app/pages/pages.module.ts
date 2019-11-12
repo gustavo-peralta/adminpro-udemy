@@ -14,6 +14,9 @@ import { ChartsModule } from 'ng2-charts';
 import { GraficoDonutComponent } from '../componets/graficoDonut/graficoDonut.component';
 
 
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -28,7 +31,8 @@ import { GraficoDonutComponent } from '../componets/graficoDonut/graficoDonut.co
     Graficas1Component,
     PagesComponent,
     IncrementadorComponent,
-    GraficoDonutComponent
+    GraficoDonutComponent,
+    AccountSettingsComponent
   ],
   exports: [
     DashboardComponent,

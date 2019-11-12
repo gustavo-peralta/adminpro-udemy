@@ -13,7 +13,9 @@ import { RegisterComponent } from './login/register.component';
 
 // Temporalmente
 import { FormsModule } from '@angular/forms';
-import { ComponentModule } from './componets/components.module';
+
+// Modules
+import { ServiceModule } from './services/service.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ComponentModule } from './componets/components.module';
     BrowserModule,
     PagesModule,
     APP_ROUTES,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
   exports: [ ],
   providers: [],

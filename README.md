@@ -10,9 +10,13 @@ git add .  -> Agrega todos los archivos pendiente de admitir como validos para c
 git commit -m "mi mensaje" -> Para realizar los commits
 git remote add origin http://.... -> Agrega un origen remoto donde subir lor archivos
 git remote -v -> Muestra los origenes remotos que tengamos configurados
-git push -u origin master -> Sube los archivos comiteados a la url remota (-u define que es el origen por defecto)
 git commit -am "Modificaciones en los modulos" -> Two step in one, adding files to commit and commit
+git tag -a v1.1.0 -m "Versión Input, Output y ViewChild" -> -a para hacer una anotación
+git tag -> Para ver mis banderas
+git push --tags
+
 git push origin master
+git push -u origin master -> Sube los archivos comiteados a la url remota (-u define que es el origen por defecto)
 
 
 ## Cosas interesantes descubiertas en el curso
