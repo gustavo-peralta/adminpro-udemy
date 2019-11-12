@@ -3,8 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
 ## GIT - Commnads more used
-gitignore  -> Archivo dentro del proyecto que define que parte no se va a subir al repositorio
-git init   -> Inicializa el repositorio
+#gitignore  -> Archivo dentro del proyecto que define que parte no se va a subir al repositorio
+#git init   -> Inicializa el repositorio
 git status -> Devuelve info sobre los archivos que estan pendientes de agregar para futuro commit
 git add .  -> Agrega todos los archivos pendiente de admitir como validos para commit (una vez ejecutado git status  para ver que ahora no queda nada pendiente)
 git commit -m "mi mensaje" -> Para realizar los commits
