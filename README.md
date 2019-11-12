@@ -22,6 +22,8 @@ git push -u origin master -> Sube los archivos comiteados a la url remota (-u de
 ## Cosas interesantes descubiertas en el curso
 [att.style.width] -> Angular puede gestionar propiedades conocidas de un elemento HTML indicandole el atributo attr y generando ese valor desde el componente.
 
+declare function init_plugins(); -> Forma de llamar a una función JS desde un componente.
+
 ng g c component/graficoDonut --is --spec=false --skip-import -> skip-import evita que se añada este componente al app.module.ts
 
 ## Development server
