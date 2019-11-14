@@ -24,6 +24,54 @@ git push -u origin master -> Sube los archivos comiteados a la url remota (-u de
 
 ng g c component/graficoDonut --is --spec=false --skip-import -> skip-import evita que se añada este componente al app.module.ts
 
+Creación de snippets -> File-Preferences-User snippets
+Ejemplo Snippet:
+{
+    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    
+    "Tarjeta con ROW": {
+        "prefix": "cardRow",
+        "body": [
+            "<div class=\"row\">",
+            "  <div class=\"col-12\">",
+            "      <div class=\"card\">",
+            "          <div class=\"card-body\">",
+            "",
+            "              $1",
+            "",
+            "          </div>",
+            "      </div>",
+            "  </div>",
+            "</div> ",
+        ],
+        "description": "Crea una tarjeta de Bootstrap con su row"
+    }
+}
+
+Promesas: Llamada al metodo resolve() o reject() en linea
+    promesa.then(
+         () => console.log('Termino!'), // Then
+         () => console.log('Error'), // Catch error
+    );
+Promesas: Devolver una promera dentro de una función
+    return new Promise<boolean>( (resolve, reject) => {
+      let contador = 0;
+
+      const intervalo = setInterval( () => {
+        contador ++;
+        console.log(contador);
+        if(contador === 3) {
+            
+resolve(true);
+//reject('Simplemente un error');
+
+          clearInterval(intervalo);
+        }
+      }, 1000);
+    });
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
