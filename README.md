@@ -26,7 +26,7 @@ declare function init_plugins(); -> Forma de llamar a una función JS desde un c
 
 ng g c component/graficoDonut --is --spec=false --skip-import -> skip-import evita que se añada este componente al app.module.ts
 
-Creación de snippets -> File-Preferences-User snippets
+- Creación de snippets -> File-Preferences-User snippets
 Ejemplo Snippet:
 {
     // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
@@ -51,7 +51,7 @@ Ejemplo Snippet:
     }
 }
 
-Promesas: Llamada al metodo resolve() o reject() en linea
+- Promesas: Llamada al metodo resolve() o reject() en linea
     promesa.then(
          () => console.log('Termino!'), // Then
          () => console.log('Error'), // Catch error
@@ -73,6 +73,15 @@ resolve(true);
       }, 1000);
     });
 
+
+- Observables (PIPE)
+  .pipe( // Tuberia para hacer alguna tranformación en los datos
+      retry(2) // Numero de intentos en una llamada asincrona observable
+    ).subscribe(
+      next => console.log('Subscripción', next), 
+      error => console.error('Error en el obser', error),
+      compete => console.log('El observador termino!')
+  );
 
 ## Development server
 

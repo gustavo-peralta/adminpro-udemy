@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { retry } from 'rxjs/operators';
+import { Observable, Subscriber } from 'rxjs';
+import { retry, map, filter } from 'rxjs/operators';
 
 
 @Component({
@@ -12,38 +12,65 @@ export class RxjsComponent implements OnInit {
 
   constructor() {
 
-    const obser = new Observable( observer => { // from rxjs -> reactive extensions
+    this.regresaObservable().subscribe(
+      numero => console.log('Subscripción', numero),
+      error => console.error('Error en el obser', error),
+      () => console.log('El observador termino!')
+    );
+
+    // this.regresaObservable().pipe( // Tuberia para hacer alguna tranformación en los datos
+    //   retry(2)
+    // ).subscribe(
+    //   numero => console.log('Subscripción', numero),
+    //   error => console.error('Error en el obser', error),
+    //   () => console.log('El observador termino!')
+    // );
+  }
+
+  ngOnInit() {
+  }
+
+  public regresaObservable(): Observable<any> {
+
+    return new Observable( (observer: Subscriber<any>) => { // from rxjs -> reactive extensions
 
       let contador = 0;
 
       const intervalo = setInterval( () => {
-
         contador ++;
-        observer.next(contador); // Notifica que ha llegado algo
+
+
+        const salida = {
+          valor: contador
+        };
+
+
+        observer.next(salida); // Notifica que ha llegado algo
 
         if (contador === 3) {
           clearInterval(intervalo);
           observer.complete();
         }
-
-        if (contador === 2) {
-          //clearInterval(intervalo);
-          observer.error('Envio un error al observer');
-        }
+        // if (contador === 2) {
+        //   observer.error('Envio un error al observer');
+        // }
 
       }, 1000);
-    });
+    }).pipe(
+      map( respuestas => {
+        return respuestas.valor
+      }),
+      filter( (valor, index) => {
+        //console.log('Filter', valor, index);
 
-    obser.pipe( // Tuberia para hacer alguna tranformación en los datos
-      retry(2)
-    ).subscribe(
-      numero => console.log('Subscripción', numero),
-      error => console.error('Error en el obser', error),
-      () => console.log('El observador termino!')
+        if( (valor % 2) === 1 ) { // Numero impar
+          return true;
+        } else { // Numero para
+          return false;
+        }
+        return true;
+      })
     );
-  }
-
-  ngOnInit() {
   }
 
 }
