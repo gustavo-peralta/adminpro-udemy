@@ -19,13 +19,18 @@ git push origin master
 git push -u origin master -> Sube los archivos comiteados a la url remota (-u define que es el origen por defecto)
 
 
-## Cosas interesantes descubiertas en el curso
+### Cosas interesantes descubiertas en el curso
+
+## Acceso a la propidad conocida de un elemento HTML
 [att.style.width] -> Angular puede gestionar propiedades conocidas de un elemento HTML indicandole el atributo attr y generando ese valor desde el componente.
 
+## Llamada a una función JS desde Angular
 declare function init_plugins(); -> Forma de llamar a una función JS desde un componente.
 
+## Generación de un componente sin ser añadido a ningún módulo
 ng g c component/graficoDonut --is --spec=false --skip-import -> skip-import evita que se añada este componente al app.module.ts
 
+## Creación de snippets
 - Creación de snippets -> File-Preferences-User snippets
 Ejemplo Snippet:
 {
@@ -51,6 +56,7 @@ Ejemplo Snippet:
     }
 }
 
+## Promesas
 - Promesas: Llamada al metodo resolve() o reject() en linea
     promesa.then(
          () => console.log('Termino!'), // Then
@@ -73,7 +79,7 @@ resolve(true);
       }, 1000);
     });
 
-
+## Observables
 - Observables (PIPE)
   .pipe( // Tuberia para hacer alguna tranformación en los datos
       retry(2) // Numero de intentos en una llamada asincrona observable
@@ -83,13 +89,26 @@ resolve(true);
       compete => console.log('El observador termino!')
   );
 
-## Development server
+## BreadCrumb
+Crear observables con pipes sobre las rutas para obtener solo la parte del router que nos interesa desde sus eventos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+return this.router.events ---> El pipe devuelve un Observable
+    .pipe(
+      filter( evento => evento instanceof ActivationEnd),
+      filter( (evento: ActivationEnd) => evento.snapshot.firstChild === null ),
+      map( (evento: ActivationEnd) => evento.snapshot.data)
 
-## Code scaffolding
+    );
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Añadir a la pestaña del navegador el nombre de la pagina actual
+Con el ejemplo anterior de uso de pipes en las rutas tambien podemos hacer uso de una clase den angular-platform-browser que nos
+permite añadir el titulo que queramos a la pestaña del navegador
+
+Injectamos la dependencia en el constructor:
+private title: Title
+
+Usamos el setter setTitle:
+this.title.setTitle( this.titulo );
 
 ## Build
 
@@ -102,7 +121,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
