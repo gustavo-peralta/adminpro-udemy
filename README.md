@@ -110,6 +110,65 @@ private title: Title
 Usamos el setter setTitle:
 this.title.setTitle( this.titulo );
 
+
+## Creación del BACKEND
+
+### Temas a tratar
+- Configuración de Mongo (Almacenar imagenes - Encriptar contraseña - Tokens)
+- Robo 3T ( Manejador de BDD -- Creación de querys contra mongo)
+- Conexión entre Mongo y Node
+- Colecciones
+- TIP para mostrar la info en consola por colores
+- HTTP -> Aprender sobre tipos respuestas correctas (404 - 403 - 200 - 201)
+- Post Man para probar los servicios 
+- Configuración inicial de Express
+- Establecer las bases para crear los servicios REST
+- Nuevo Repo para el BACK END
+
+## Inicio del backend
+npm init -> Genera un archivo JSON
+npm install express --save -> Instalación de Express
+
+### Comando de consola para ruta actual
+pwd = Path Actual en la PowerShell
+
+### Comando de consola de node para ejecutar fichero js
+node app para ejecutar un js de node
+
+### Nodemon refresco automatico servidor DB
+nodemon -> Instalación de nodemon para refresco del servidor en cada cambio
+
+### Instalación de mongo
+Instalación de mongo:
+https://docs.mongodb.com/manual/installation/
+
+### Interfax de usuario oficial de mongo
+MongoDB Compass -> Interface de usuario oficial de mongo 
+
+### Ruta para arrancar mongodb de nuestro proyecto en consola:
+"C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe" --dbpath="c:\mongodbs\adminprodb"
+
+### Ruta para arrancar mongo 
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
+
+### Integración de mongo con node mediante mongosse:
+Es un ODM que ayuda a modelar (cración de modelos) la BBDD de mongo
+mongoose 
+var mongoose = require('mongoose');
+mongoose.connection.openUri('mongodb://localhost:27017/hospitalDB', (err, resp) => {
+
+    if (err) throw err;
+    console.log('Base de datos: \x1b[32m%s\x1b[0m', 'online');
+});
+
+### Body parser node
+Middleware -> Funciones que se van a ejecutar siempre
+En este caso siempre que enviemos algo en el body, el body-parser lo va a nalizar y lo va a parsear para usar en otro sitios
+npm install body-parser
+Analice los cuerpos de solicitud entrantes en un middleware antes de sus manejadores, disponibles bajo la propiedad req.body.
+
+
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
