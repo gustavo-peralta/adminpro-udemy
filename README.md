@@ -136,7 +136,7 @@ pwd = Path Actual en la PowerShell
 node app para ejecutar un js de node
 
 ### Nodemon refresco automatico servidor DB
-nodemon -> Instalación de nodemon para refresco del servidor en cada cambio
+nodemon -> nstalación de nodemon para refresco del servidor en cada cambioI
 
 ### Instalación de mongo
 Instalación de mongo:
@@ -163,11 +163,26 @@ mongoose.connection.openUri('mongodb://localhost:27017/hospitalDB', (err, resp) 
 
 ### Body parser node
 Middleware -> Funciones que se van a ejecutar siempre
+Cuando hacemos una consulta en Mongo en vez de devolver el resultado en linea,
+lo parsea para que se mas legible.
 En este caso siempre que enviemos algo en el body, el body-parser lo va a nalizar y lo va a parsear para usar en otro sitios
 npm install body-parser
 Analice los cuerpos de solicitud entrantes en un middleware antes de sus manejadores, disponibles bajo la propiedad req.body.
 
+### Plugin mongoose para controlar errores 
+npm i mongoose-unique-validator --save
+Se puede ver mas información sobre estos plugins en la pagina de mongoose
 
+### Encriptación de contraseña
+bcrypt.js -> Libreria 
+npm install bcryptjs
+
+### Generación de TOKEN
+Usamos libreria node jsonwebtoken de github
+npm install jsonwebtoken --save
+
+### Express-fileupload
+Librería para subir imágenes al backEnd
 
 ## Build
 

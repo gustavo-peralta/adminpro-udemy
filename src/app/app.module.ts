@@ -12,7 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 
 // Temporalmente
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Modules
 import { ServiceModule } from './services/service.module';
@@ -28,6 +28,7 @@ import { ServiceModule } from './services/service.module';
     PagesModule,
     APP_ROUTES,
     FormsModule,
+    ReactiveFormsModule,
     ServiceModule
   ],
   exports: [ ],
