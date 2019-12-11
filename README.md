@@ -110,6 +110,11 @@ private title: Title
 Usamos el setter setTitle:
 this.title.setTitle( this.titulo );
 
+### CORS - Miidleware - Express
+https://enable-cors.org/server_expressjs.html
+
+
+
 
 ## Creación del BACKEND
 
